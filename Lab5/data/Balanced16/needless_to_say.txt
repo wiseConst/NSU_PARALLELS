@@ -1,0 +1,57 @@
+~/NSU/Parallels/Lab5/cmake-build-release
+mpirun -np 16 ./Lab5
+ClusterSize: 16
+Iterations: 25
+Tasks: 2000
+Disbalance rate is 8.09996%
+SOLVER_THREAD_0: Current iteration: 0
+Disbalance rate is 10.196%
+SOLVER_THREAD_0: Current iteration: 1
+Disbalance rate is 11.2051%
+SOLVER_THREAD_0: Current iteration: 2
+Disbalance rate is 12.1779%
+SOLVER_THREAD_0: Current iteration: 3
+Disbalance rate is 12.4009%
+SOLVER_THREAD_0: Current iteration: 4
+Disbalance rate is 11.331%
+SOLVER_THREAD_0: Current iteration: 5
+Disbalance rate is 13.7327%
+SOLVER_THREAD_0: Current iteration: 6
+Disbalance rate is 10.5538%
+SOLVER_THREAD_0: Current iteration: 7
+Disbalance rate is 10.3342%
+SOLVER_THREAD_0: Current iteration: 8
+Disbalance rate is 9.04714%
+SOLVER_THREAD_0: Current iteration: 9
+Disbalance rate is 6.51887%
+SOLVER_THREAD_0: Current iteration: 10
+Disbalance rate is 19.6017%
+SOLVER_THREAD_0: Current iteration: 11
+Disbalance rate is 10.6661%
+SOLVER_THREAD_0: Current iteration: 12
+Disbalance rate is 14.6166%
+SOLVER_THREAD_0: Current iteration: 13
+Disbalance rate is 18.4126%
+SOLVER_THREAD_0: Current iteration: 14
+Disbalance rate is 13.5016%
+SOLVER_THREAD_0: Current iteration: 15
+Disbalance rate is 10.524%
+SOLVER_THREAD_0: Current iteration: 16
+Disbalance rate is 10.8097%
+SOLVER_THREAD_0: Current iteration: 17
+Disbalance rate is 11.6575%
+SOLVER_THREAD_0: Current iteration: 18
+Disbalance rate is 12.3228%
+SOLVER_THREAD_0: Current iteration: 19
+Disbalance rate is 10.887%
+SOLVER_THREAD_0: Current iteration: 20
+Disbalance rate is 11.8581%
+SOLVER_THREAD_0: Current iteration: 21
+Disbalance rate is 11.1078%
+SOLVER_THREAD_0: Current iteration: 22
+Disbalance rate is 10.1892%
+SOLVER_THREAD_0: Current iteration: 23
+Disbalance rate is 9.38494%
+SOLVER_THREAD_0: Current iteration: 24
+Summary disbalance: 11.6455%
+Balanced task solving via parallelization completed in 343.734 seconds.
