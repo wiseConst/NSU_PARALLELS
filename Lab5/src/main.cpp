@@ -22,7 +22,7 @@ static double s_DisbalanceSum       = 0.0;
 #define SOLVER_FINISHED (UINT32_MAX / 20)
 #define NO_TASKS_TO_SHARE (SOLVER_FINISHED - 1)
 
-#define OUTPUT_STATS 1
+#define OUTPUT_STATS 0
 #define LOG_INFO 0
 #define STEAL 1
 #define RANDOMIZE 0  // thrash results
@@ -202,15 +202,19 @@ static void LaunchSolverThread()
 #endif
             }
 
-            constexpr uint32_t executionFinishedMessage = SOLVER_FINISHED;
-            for (int32_t procNum{}; procNum < s_ClusterSize; ++procNum)
+            MPI::COMM_WORLD.Barrier();  // Allreduce on the last iteration implies that, but let it be here.
+            if (s_ProcNum == 0)
             {
-                if (procNum == s_ProcNum) continue;
+                constexpr uint32_t executionFinishedMessage = SOLVER_FINISHED;
+                for (int32_t procNum{}; procNum < s_ClusterSize; ++procNum)
+                {
+                    if (procNum == s_ProcNum) continue;
 
-                MPI::COMM_WORLD.Send(&executionFinishedMessage, 1, MPI::UNSIGNED, procNum, s_ClusterSize + 1);
+                    MPI::COMM_WORLD.Send(&executionFinishedMessage, 1, MPI::UNSIGNED, procNum, s_ClusterSize + 1);
+                }
+
+                s_bIsRunning = false;
             }
-
-            if (s_ClusterSize == 1) s_bIsRunning = false;
         });
 }
 

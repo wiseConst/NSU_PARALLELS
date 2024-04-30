@@ -24,7 +24,7 @@ template <typename T> class ConcurrentQueue
             m_Queue.emplace(value);
         }
 
-        m_CondVar.notify_one();
+        m_CondVar.notify_all();
     }
 
     size_t Size() const
